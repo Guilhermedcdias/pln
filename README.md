@@ -1,0 +1,87 @@
+
+# Projeto de Processamento de Linguagem Natural
+
+Este projeto é um exemplo de como processar texto em Python usando as bibliotecas `nltk` e `matplotlib` para gerar um gráfico da frequência de palavras em um texto.
+
+## Pré-requisitos
+
+- **Python 3.x**
+- **pip** (gerenciador de pacotes do Python)
+
+## Configuração do Ambiente
+
+### 1. Clone o Repositório
+
+Clone este repositório para sua máquina local usando o comando:
+
+```bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+```
+
+### 2. Crie um Ambiente Virtual
+
+Navegue até o diretório do projeto e crie um ambiente virtual:
+
+```bash
+cd nome-do-repositorio
+python -m venv env
+```
+
+### 3. Ative o Ambiente Virtual
+
+Ative o ambiente virtual:
+
+- **Windows**:
+  ```bash
+  .\env\Scripts\activate
+  ```
+
+- **MacOS/Linux**:
+  ```bash
+  source env/bin/activate
+  ```
+
+### 4. Instale as Dependências
+
+Com o ambiente virtual ativado, instale as dependências necessárias:
+
+```bash
+pip install --upgrade pip
+pip install nltk matplotlib
+```
+
+### 5. Baixe os Pacotes NLTK
+
+Inicie o interpretador Python e execute os seguintes comandos para baixar os pacotes necessários:
+
+```python
+import nltk
+nltk.download('punkt')
+nltk.download('stopwords')
+exit()
+```
+
+## Executando o Script
+
+Após configurar o ambiente, você pode executar o script para processar um arquivo de texto e gerar o gráfico de frequência de palavras.
+
+1. Coloque o arquivo de texto (`.txt`) que você deseja processar no diretório do projeto.
+2. Execute o script Python:
+
+```bash
+python processar_texto.py
+```
+
+O script vai gerar um gráfico mostrando as 20 palavras mais frequentes no texto, excluindo as stopwords (palavras comuns como "de", "a", "e", etc.).
+
+## Desativando o Ambiente Virtual
+
+Após terminar de trabalhar no projeto, você pode desativar o ambiente virtual com o seguinte comando:
+
+```bash
+deactivate
+```
+
+## Licença
+
+Este projeto é licenciado sob os termos da licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
