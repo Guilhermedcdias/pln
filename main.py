@@ -18,12 +18,47 @@ def processar_texto(arquivo):
     # Tokenização do texto em palavras
     palavras = word_tokenize(texto.lower())
 
+    # printando as palavras as primeiras 20 palavras
+    print("\n")
+    print("Palavras originais tokenizadas: \n")
+    print(palavras[:23])
+    print("\n")
+
     # Remoção de pontuações
     palavras = [palavra for palavra in palavras if palavra not in string.punctuation]
 
+    # printando as palavras
+    print("\n")
+    print("Palavras sem pontuações: \n")
+    print(palavras[:23])
+    print("\n")
+
+
     # Remoção de stopwords (palavras comuns que não agregam muito significado)
     stop_words = set(stopwords.words('portuguese'))
+
+    print("\n")
+    print("Stop words: \n")
+    print (stop_words)
+    print("\n")
+
     palavras = [palavra for palavra in palavras if palavra not in stop_words]
+
+    # printando as palavras
+    print("\n")
+    print("Palavras sem stop words: \n")
+    print(palavras[:23])
+    print("\n")
+
+
+    # Removendo todos os numeros
+    palavras = [palavra for palavra in palavras if not palavra.isdigit()]
+
+    # printando as palavras
+    print("\n")
+    print("Palavras sem números: \n")
+    print(palavras[:23])
+    print("\n")
 
     # Contagem de frequência das palavras
     contagem = Counter(palavras)
@@ -32,12 +67,12 @@ def processar_texto(arquivo):
 
 # Função para gerar o gráfico
 def gerar_grafico(contagem):
-    palavras, frequencias = zip(*contagem.most_common(20))  # Mostra as 20 palavras mais comuns
+    palavras, frequencias = zip(*contagem.most_common(35))  # Mostra as 20 palavras mais comuns
     plt.figure(figsize=(10, 5))
     plt.bar(palavras, frequencias, color='blue')
     plt.xlabel('Palavras')
     plt.ylabel('Frequência')
-    plt.title('Frequência das 20 palavras mais comuns')
+    plt.title('Frequência das 35 palavras mais comuns')
     plt.xticks(rotation=45)
     plt.show()
 
